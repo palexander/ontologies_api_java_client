@@ -1,0 +1,6 @@
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.next
+release.properties
+src/test/resources/org/bioontology/ontologies/api/test_config.properties
