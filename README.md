@@ -11,17 +11,22 @@ Note: This is an UNOFFICIAL client, unsupported by NCBO
 String apikey = "MY APIKEY";
 HTTPOptions opts = new HTTPOptions(apikey);
 Client client = new Client(getHTTPOptions());
+
 // Get all ontologies
 List<NCBOOntology> result = client.getAll(NCBOOntology.class);
+
 // Get a single ontology by ID
 String id = "http://data.bioontology.org/ontologies/SNOMEDCT";
 NCBOOntology ont = client.getByID(id, NCBOOntology.class);
+
 // Search classes
 SearchOptions searchOpts = new SearchOptions();
 NCBOPage<NCBOClass> result = client.search("melanoma", searchOpts);
+
 // Follow hypermedia links
 NCBOOntology ont = client.getByID(id, NCBOOntology.class);
 List submissions = ont.followLink("latest_submission", NCBOSubmission.class, opts);
+
 // Provide parameters when retrieving resources
 HTTPParameters params = new HTTPParameters();
 params.addParameter("include", "acronym,name,viewOf");
