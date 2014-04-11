@@ -1,4 +1,4 @@
-# NCBO Ontologies REST API Client Example
+# NCBO REST API Client Example
 
 A very basic example of creating a Java client for the NCBO REST API (http://data.bioontology.org/documentation)
 
