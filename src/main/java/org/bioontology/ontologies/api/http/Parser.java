@@ -88,11 +88,11 @@ public class Parser {
 
     private static <T extends Model> List<Model> convertCollection(Iterator<JsonNode> list, Class<T> model) {
         List newList = new ArrayList<>();
-        JsonNode node = list.next();
+        JsonNode node;
         while (list.hasNext()) {
             try {
-                newList.add(mapper.readValue(node.traverse(), model));
                 node = list.next();
+                newList.add(mapper.readValue(node.traverse(), model));                
             } catch (IOException ex) {
                 Logger.getLogger(Parser.class.getName()).log(Level.SEVERE, null, ex);
             }
