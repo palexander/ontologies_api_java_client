@@ -35,7 +35,7 @@ public class NCBOPage<T extends Model> implements Iterator<NCBOPage> {
     private Integer prevPageNum;
     private URI nextPageURI;
     private URI prevPageURI;
-    private List<Model> collection;
+    private List<T> collection;
     private HTTPOptions opts;
     private final Class model;
 
@@ -72,7 +72,7 @@ public class NCBOPage<T extends Model> implements Iterator<NCBOPage> {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    public List<Model> toList() {
+    public List<T> toList() {
         return collection;
     }
 
@@ -163,14 +163,14 @@ public class NCBOPage<T extends Model> implements Iterator<NCBOPage> {
     /**
      * @return the collection
      */
-    public List<Model> getCollection() {
+    public List<T> getCollection() {
         return collection;
     }
 
     /**
      * @param collection the collection to set
      */
-    public void setCollection(List<Model> collection) {
+    public void setCollection(List<T> collection) {
         this.collection = collection;
     }
 
