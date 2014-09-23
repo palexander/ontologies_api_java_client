@@ -88,7 +88,7 @@ public class ClientTest {
         String id = "http://data.bioontology.org/ontologies/SNOMEDCT";
         Client client = new Client(getHTTPOptions());
         NCBOOntology ont = client.getByID(id, NCBOOntology.class);
-        List submissions = ont.getSubmissions(getHTTPOptions());
+        List<NCBOSubmission> submissions = ont.getSubmissions(getHTTPOptions());
         assert (submissions.size() > 2);
     }
 
@@ -107,7 +107,7 @@ public class ClientTest {
         Client client = new Client(getHTTPOptions());
         SearchOptions searchOpts = new SearchOptions();
         NCBOPage<NCBOClass> result = client.search("melanoma", searchOpts);
-        List classes = new ArrayList<>();
+        List<NCBOClass> classes = new ArrayList<>();
         while (result.hasNext()) {
             classes.addAll(result.getCollection());
             result = result.next();
@@ -121,7 +121,7 @@ public class ClientTest {
         String id = "http://data.bioontology.org/ontologies/SNOMEDCT";
         Client client = new Client(getHTTPOptions());
         NCBOOntology ont = client.getByID(id, NCBOOntology.class);
-        List submissions = ont.followLink("latest_submission", NCBOSubmission.class, opts);
+        List<NCBOSubmission> submissions = ont.followLink("latest_submission", NCBOSubmission.class, opts);
         assert (submissions.size() == 1);
         assert (submissions.get(0) instanceof NCBOSubmission);
     }

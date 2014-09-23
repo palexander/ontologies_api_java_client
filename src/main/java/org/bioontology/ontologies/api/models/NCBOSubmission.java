@@ -13,11 +13,19 @@ import org.bioontology.ontologies.api.annotations.RESTHints;
 public class NCBOSubmission extends Model {
 
     public static class Contact {
-
+    	
+    	private String id;
         private String name;
         private String email;
 
-        /**
+		/**
+         * @return the id
+         */
+        public String getId() {
+			return id;
+		}
+
+		/**
          * @return the name
          */
         public String getName() {
@@ -30,6 +38,13 @@ public class NCBOSubmission extends Model {
         public String getEmail() {
             return email;
         }
+        
+        /**
+         * @param id the id to set
+         */
+        public void setId(String id) {
+			this.id = id;
+		}
 
         /**
          * @param name the name to set
