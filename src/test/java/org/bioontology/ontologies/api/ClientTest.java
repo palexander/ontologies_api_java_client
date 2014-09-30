@@ -106,13 +106,13 @@ public class ClientTest {
         System.out.println("searchIteration");
         Client client = new Client(getHTTPOptions());
         SearchOptions searchOpts = new SearchOptions();
-        NCBOPage<NCBOClass> result = client.search("melanoma", searchOpts);
+        NCBOPage<NCBOClass> result = client.search("amoxicillin", searchOpts);
         List<NCBOClass> classes = new ArrayList<>();
         while (result.hasNext()) {
             classes.addAll(result.getCollection());
             result = result.next();
         }
-        assert (classes.size() >= 2200);
+        assert (classes.size() >= 750);
     }
 
     @Test

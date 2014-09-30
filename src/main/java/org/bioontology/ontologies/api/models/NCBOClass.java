@@ -20,6 +20,8 @@ public class NCBOClass extends Model {
 	private List<String> semanticType;
 	private Map<String, List<String>> properties;
 	private boolean obsolete;
+	// Possible values for matchType: id, prefLabel, synonym, property, notation, cui, semanticType
+	private String matchType;
 
 	/**
 	 * @return the prefLabel
@@ -132,5 +134,20 @@ public class NCBOClass extends Model {
 	public void setObsolete(boolean obsolete) {
 		this.obsolete = obsolete;
 	}
+
+	/**
+	 * @return the matchType
+	 */
+	public String getMatchType() {
+		return matchType;
+	}
+
+	/**
+	 * @param matchType the matchType to set
+	 */
+	public void setMatchType(String matchType) {
+		this.matchType = matchType;
+	}
+	
 
 }
